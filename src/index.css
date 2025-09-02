@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Middle Fintech Design System - Premium, trustworthy, and responsive */
+
+@layer base {
+  :root {
+    /* Base Colors - Clean whites and soft greys */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 13%;
+    
+    /* Card System - Elevated with subtle borders */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 13%;
+    --card-border: 220 13% 91%;
+    
+    /* Trust Blue - Primary brand color */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 95%;
+    
+    /* Success Green - For completed actions */
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 158 64% 95%;
+    
+    /* Warning/Pending - Amber */
+    --warning: 43 96% 56%;
+    --warning-foreground: 220 13% 13%;
+    --warning-light: 43 96% 95%;
+    
+    /* Destructive/Error - Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 84% 95%;
+    
+    /* Neutral Greys - For secondary content */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 9% 46%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Interactive Elements */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 217 91% 97%;
+    
+    /* Form Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    
+    /* Surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 13%;
+    
+    /* Layout - Premium spacing */
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --radius-lg: 1.25rem;
+    
+    /* Shadows for premium feel */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    
+    /* Gradients for premium feel */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 47%));
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 14% 99%));
+    
+    /* Transitions */
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Typography Scale */
+  .text-h1 {
+    @apply text-2xl sm:text-[28px] font-bold leading-tight tracking-tight;
+  }
+  
+  .text-h2 {
+    @apply text-lg sm:text-xl font-semibold leading-tight tracking-tight;
+  }
+  
+  .text-body {
+    @apply text-[15px] sm:text-base leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply text-xs sm:text-[13px] leading-normal;
+  }
+}
+
+@layer components {
+  /* Premium Card System */
+  .fintech-card {
+    @apply bg-card border border-card-border rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  .metric-card {
+    @apply fintech-card hover:border-primary/20 cursor-pointer min-h-[120px] flex flex-col justify-between;
+  }
+  
+  .quick-action-card {
+    @apply fintech-card hover:border-primary/20 cursor-pointer min-h-[100px] flex flex-col items-center justify-center text-center gap-2 p-4;
+  }
+  
+  /* Status Badge System */
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .status-badge--pending {
+    @apply bg-warning-light text-warning border border-warning/20;
+  }
+  
+  .status-badge--active {
+    @apply bg-primary-light text-primary border border-primary/20;
+  }
+  
+  .status-badge--completed {
+    @apply bg-success-light text-success border border-success/20;
+  }
+  
+  .status-badge--disputed {
+    @apply bg-destructive-light text-destructive border border-destructive/20;
+  }
+  
+  /* Button System with proper sizing */
+  .btn-44 {
+    @apply min-h-[44px] min-w-[44px] px-4 py-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-primary-foreground btn-44;
+  }
+  
+  .btn-success {
+    @apply bg-success hover:bg-success/90 text-success-foreground btn-44;
+  }
+  
+  /* Premium interactions */
+  .trust-hover {
+    @apply transition-all duration-200 hover:scale-[1.01] hover:shadow-md;
+  }
+  
+  .funds-lock-animation {
+    @apply transition-all duration-300 animate-pulse;
+  }
+  
+  /* Loading states */
+  .loading-shimmer {
+    @apply animate-pulse bg-gradient-to-r from-muted via-muted/50 to-muted;
+  }
+}
+
+@layer utilities {
+  /* Custom shadows using design tokens */
+  .shadow-fintech {
+    box-shadow: var(--shadow);
+  }
+  
+  .shadow-fintech-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-fintech-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Gradient utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .bg-gradient-surface {
+    background: var(--gradient-surface);
+  }
+  
+  /* Premium layout system */
+  .container-fintech {
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Responsive grids */
+  .grid-metrics {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6;
+  }
+  
+  .grid-actions {
+    @apply grid grid-cols-2 gap-3 sm:gap-4;
+  }
+  
+  .grid-main {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6;
+  }
+  
+  /* Text overflow prevention */
+  .text-truncate-tooltip {
+    @apply truncate;
+  }
+  
+  .text-wrap-button {
+    @apply break-words hyphens-auto;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar for modern feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
