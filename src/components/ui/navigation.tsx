@@ -74,7 +74,7 @@ export function TopNavigation({ onRefresh, lastUpdated }: TopNavigationProps) {
       <div className="container-fintech">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logoImageUrl} alt="Middle" className="h-8 w-auto" />
+            <img src={logoImageUrl} alt="Middle" className="h-12 w-auto" />
           </Link>
           
           <div className="flex items-center gap-2">
