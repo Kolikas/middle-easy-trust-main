@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import faviconUrl from '../MIDDLE (3).ico'
 
 function setFavicon(href: string): void {
   let link = document.querySelector<HTMLLinkElement>("link[rel='icon']");
@@ -14,6 +13,6 @@ function setFavicon(href: string): void {
   link.href = href;
 }
 
-setFavicon(faviconUrl);
+setFavicon('/favicon.ico');
 
 createRoot(document.getElementById("root")!).render(<App />);
